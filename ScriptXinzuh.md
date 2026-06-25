@@ -1,4 +1,3 @@
-loadstring(game:HttpGet("https://raw.githubusercontent.com/chinez07/Xinzuh-Script/refs/heads/main/XinzuhScript.md"))()
 local Y = game.Players;
 local d = Y.LocalPlayer;
 local R = d.Character.HumanoidRootPart;
