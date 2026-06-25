@@ -145,9 +145,9 @@ local G = {
 local q = {
 		Mob = "Mythological Pirate",
 		Mob2 = "Cursed Skeleton",
-		"Hell\'s Messenger",
+		"Hell's Messenger",
 		Mob3 = "Cursed Skeleton",
-		"Heaven\'s Guardian",
+		"Heaven's Guardian",
 	};
 local t = {
 		"Part",
@@ -203,7 +203,7 @@ local e = {
 		["Candy Rebel"] = CFrame.new(47, 61, -12889),
 		Ghost = CFrame.new(5251, 5, 1111),
 	};
-EquipWeapon = function(Y)
+	EquipWeapon = function(Y)
 		if not Y then
 			return;
 		end;
@@ -268,7 +268,7 @@ f.Dist = function(Y, d)
 f.DistH = function(Y, d)
 		return (R.Position - (Y:FindFirstChild("HumanoidRootPart")).Position).Magnitude > d;
 	end;
-f.Kill = function(Y, d)
+	f.Kill = function(Y, d)
 		if Y and d then
 			if not Y:GetAttribute("Locked") then
 				Y:SetAttribute("Locked", Y.HumanoidRootPart.CFrame);
@@ -346,7 +346,7 @@ f.KillSea = function(Y, d)
 			end;
 		end;
 	end;
-f.Sword = function(Y, d)
+	f.Sword = function(Y, d)
 		if Y and d then
 			if not Y:GetAttribute("Locked") then
 				Y:SetAttribute("Locked", Y.HumanoidRootPart.CFrame);
@@ -427,7 +427,7 @@ statsSetings = function(Y, R)
 			end;
 		end;
 	end;
-BringEnemy = function()
+	BringEnemy = function()
 		if not _B then
 			return;
 		end;
@@ -498,7 +498,7 @@ Useskills = function(Y, d)
 			K:SendKeyEvent(false, "Y", false, game);
 		end;
 	end;
-local s = getrawmetatable(game);
+	local s = getrawmetatable(game);
 local x = s.__namecall;
 setreadonly(s, false);
 s.__namecall = newcclosure(function(...)
@@ -567,7 +567,7 @@ LowCpu = function()
 			end;
 		end;
 	end;
-CheckF = function()
+	CheckF = function()
 		if GetBP("Dragon-Dragon") or GetBP("Gas-Gas") or GetBP("Yeti-Yeti") or GetBP("Kitsune-Kitsune") or GetBP("T-Rex-T-Rex") then
 			return true;
 		end;
@@ -592,7 +592,7 @@ CheckPirateGrandBrigade = function()
 		for Y, d in pairs(workspace.Enemies:GetChildren()) do
 			if (d.Name == "PirateGrandBrigade" or d.Name == "PirateBrigade") and (d:FindFirstChild("Health")).Value > 0 then
 				return true;
-			end;
+		end;
 		end;
 		return false;
 	end;
@@ -600,7 +600,7 @@ CheckShark = function()
 		for Y, d in pairs(workspace.Enemies:GetChildren()) do
 			if d.Name == "Shark" and f.Alive(d) then
 				return true;
-			end;
+		end;
 		end;
 		return false;
 	end;
@@ -608,7 +608,7 @@ CheckTerrorShark = function()
 		for Y, d in pairs(workspace.Enemies:GetChildren()) do
 			if d.Name == "Terrorshark" and f.Alive(d) then
 				return true;
-			end;
+		end;
 		end;
 		return false;
 	end;
@@ -616,7 +616,7 @@ CheckPiranha = function()
 		for Y, d in pairs(workspace.Enemies:GetChildren()) do
 			if d.Name == "Piranha" and f.Alive(d) then
 				return true;
-			end;
+		end;
 		end;
 		return false;
 	end;
@@ -624,7 +624,7 @@ CheckFishCrew = function()
 		for Y, d in pairs(workspace.Enemies:GetChildren()) do
 			if (d.Name == "Fish Crew Member" or d.Name == "Haunted Crew Member") and f.Alive(d) then
 				return true;
-			end;
+		end;
 		end;
 		return false;
 	end;
@@ -632,7 +632,7 @@ CheckHauntedCrew = function()
 		for Y, d in pairs(workspace.Enemies:GetChildren()) do
 			if d.Name == "Haunted Crew Member" and f.Alive(d) then
 				return true;
-			end;
+		end;
 		end;
 		return false;
 	end;
@@ -648,7 +648,7 @@ CheckLeviathan = function()
 		end;
 		return false;
 	end;
-UpdStFruit = function()
+	UpdStFruit = function()
 		for Y, R in next, d.Backpack:GetChildren() do
 			StoreFruit = R:FindFirstChild("EatRemote", true);
 			if StoreFruit then
@@ -707,7 +707,7 @@ GetIn = function(Y)
 			if type(Q) == "table" then
 				if Q.Name == Y or d.Character:FindFirstChild(Y) or d.Backpack:FindFirstChild(Y) then
 					return true;
-				end;
+			end;
 			end;
 		end;
 		return false;
@@ -718,7 +718,7 @@ GetM = function(Y)
 				if R.Type == "Material" then
 					if R.Name == Y then
 						return R.Count;
-					end;
+				end;
 				end;
 			end;
 		end;
@@ -730,13 +730,13 @@ GetWP = function(Y)
 				if Q.Type == "Sword" then
 					if Q.Name == Y or d.Character:FindFirstChild(Y) or d.Backpack:FindFirstChild(Y) then
 						return true;
-					end;
+				end;
 				end;
 			end;
 		end;
 		return false;
 	end;
-getInfinity_Ability = function(Y, Q)
+	getinfinity_Ability = function(Y, Q)
 		if not R then
 			return;
 		end;
@@ -863,15 +863,30 @@ _tp = function(Y)
 			end;
 		end);
 	end;
-TeleportToTarget = function(Y)
+	notween = function(Y)
+		local d = d.Character;
+		if d and d:FindFirstChild("HumanoidRootPart") then
+			d.HumanoidRootPart.CFrame = Y;
+		end;
+	end;
+GetConnectionEnemies2 = function(Y)
+		for d, R in pairs(workspace.Enemies:GetChildren()) do
+			if R:IsA("Model") and (R.Name == Y and (R:FindFirstChild("Humanoid") and R.Humanoid.Health > 0)) then
+				return R;
+			end;
+		end;
+		for d, R in pairs(Q:GetChildren()) do
+			if R:IsA("Model") and (R.Name == Y and (R:FindFirstChild("Humanoid") and R.Humanoid.Health > 0)) then
+				return R;
+			end;
+		end;
+	end;
+	TeleportToTarget = function(Y)
 		if (Y.Position - d.Character.HumanoidRootPart.Position).Magnitude > 1000 then
 			_tp(Y);
 		else
 			_tp(Y);
 		end;
-	end;
-notween = function(Y)
-		d.Character.HumanoidRootPart.CFrame = Y;
 	end;
 function BTP(Y)
 	local d = game.Players.LocalPlayer;
@@ -891,48 +906,63 @@ function BTP(Y)
 		task.wait(.5);
 	until (Y.Position - R.Position).Magnitude <= 2000;
 end;
-
-local dz = {}; 
-dz.listfunction = {};
-dz.listtab = {}; 
-local Rz = game.Players.LocalPlayer.PlayerGui:FindFirstChild("TouchGui"); 
-local Qz; local rz; local az; local wz = {};
-
-local Fz = { 
-	["Border Color"] = Color3.fromRGB(0, 150, 255),
-	["Click Effect Color"] = Color3.fromRGB(255, 255, 255),
-	["Setting Icon Color"] = Color3.fromRGB(255, 255, 255),
-	["Logo Image"] = "rbxassetid://136485684668174", 
-	["Search Icon Color"] = Color3.fromRGB(255, 255, 255),
-	["Search Icon Highlight Color"] = Color3.fromRGB(0, 150, 255),
-	["GUI Text Color"] = Color3.fromRGB(255, 255, 255),
-	["Text Color"] = Color3.fromRGB(255, 255, 255),
-	["Placeholder Text Color"] = Color3.fromRGB(200, 200, 200),
-	["Title Text Color"] = Color3.fromRGB(0, 150, 255),
-	["Background Main Color"] = Color3.fromRGB(15, 15, 15),
-	["Background 1 Color"] = Color3.fromRGB(25, 25, 25),
-	["Background 1 Transparency"] = .15, 
-	["Background 2 Color"] = Color3.fromRGB(15, 15, 15),
-	["Background 3 Color"] = Color3.fromRGB(0, 0, 0),
-	["Background Image"] = "", 
-	["Page Selected Color"] = Color3.fromRGB(0, 150, 255),
-	["Section Text Color"] = Color3.fromRGB(0, 150, 255),
-	["Section Underline Color"] = Color3.fromRGB(0, 150, 255),
-	["Toggle Border Color"] = Color3.fromRGB(0, 150, 255),
-	["Toggle Checked Color"] = Color3.fromRGB(255, 255, 255),
-	["Toggle Desc Color"] = Color3.fromRGB(230, 230, 230),
-	["Button Color"] = Color3.fromRGB(20, 20, 20),
-	["Label Color"] = Color3.fromRGB(20, 20, 20),
-	["Dropdown Icon Color"] = Color3.fromRGB(255, 255, 255),
-	["Dropdown Selected Color"] = Color3.fromRGB(0, 150, 255),
-	["Dropdown Selected Check Color"] = Color3.fromRGB(0, 150, 255),
-	["Textbox Highlight Color"] = Color3.fromRGB(0, 150, 255),
-	["Box Highlight Color"] = Color3.fromRGB(0, 150, 255),
-	["Slider Line Color"] = Color3.fromRGB(30, 30, 30),
-	["Slider Highlight Color"] = Color3.fromRGB(0, 150, 255),
-	["Tween Animation 1 Speed"] = Rz and 0 or .25, 
-	["Tween Animation 2 Speed"] = Rz and 0 or .5, 
-	["Tween Animation 3 Speed"] = Rz and 0 or .1, 
-	["Text Stroke Transparency"] = .5, 
-};
-dz.UIColor = Fz;
+spawn(function()
+	while task.wait() do
+		pcall(function()
+			if _G.SailBoat_Hydra or _G.WardenBoss or _G.AutoFactory or _G.HighestMirage or _G.HCM or _G.PGB or _G.Leviathan1 or _G.UPGDrago or _G.Complete_Trials or _G.TpDrago_Prehis or _G.BuyDrago or _G.AutoFireFlowers or _G.DT_Uzoth or _G.AutoBerry or _G.Prehis_Find or _G.Prehis_Skills or _G.Prehis_DB or _G.Prehis_DE or _G.FarmBlazeEM or _G.Dojoo or _G.Level or _G.FarmEliteHunt or _G.Auto_Tushita or _G.AutoPole or _G.Shark or _G.TerrorShark or _G.Piranha or _G.FishCrew or _G.HauntedCrew or _G.SeaBeast1 or _G.AutoMatSoul or _G.FarmMastery_G or _G.FarmMastery_Dev or _G.FruitSpawn or _G.Chest or _G.Bone or _G.CakePrint or _G.Ectoplasm or _G.RaidBoss or _G.Bounty1 or _G.Bounty2 or _G.Doughv2 or _G.Praying or _G.AutoKenVTWO then
+				y = true;
+			else
+				y = false;
+			end;
+		end);
+	end;
+end);
+	AttackNoCoolDown = function()
+		local Y = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool");
+		if Y and Y:FindFirstChild("ClickRemote", true) then
+			Y.ClickRemote:GetAttribute("OriginalName");
+			(Y:FindFirstChild("ClickRemote", true)):InvokeServer();
+		end;
+	end;
+GetPosTarget = function()
+		for Y, R in pairs(workspace.Enemies:GetChildren()) do
+			local Q = R:FindFirstChild("UpperTorso") or R:FindFirstChild("Head");
+			if R:FindFirstChild("HumanoidRootPart", true) and Q then
+				if (R.Head.Position - d.Character.HumanoidRootPart.Position).Magnitude <= 50 then
+					return true, Q.Position;
+				end;
+			end;
+		end;
+		for Y, d in pairs(workspace.SeaBeasts:GetChildren()) do
+			if d:FindFirstChild("HumanoidRootPart") and (d:FindFirstChild("Health") and d.Health.Value > 0) then
+				return true, d.HumanoidRootPart.Position;
+			end;
+		end;
+		for Y, d in pairs(workspace.Enemies:GetChildren()) do
+			if d:FindFirstChild("Health") and (d.Health.Value > 0 and d:FindFirstChild("VehicleSeat")) then
+				return true, d.Engine.Position;
+			end;
+		end;
+	end;
+Actived = function()
+		local Y = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool");
+		for Y, d in next, getconnections(Y.Activated) do
+			if typeof(d.Function) == "function" then
+				getupvalues(d.Function);
+			end;
+		end;
+	end;
+task.spawn(function()
+	W.Heartbeat:Connect(function()
+		pcall(function()
+			if not _G.Seriality then
+				return;
+			end;
+			AttackNoCoolDown();
+			local Y = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool");
+			if Y then
+				Actived();
+			end;
+		end);
+	end);
+end);
