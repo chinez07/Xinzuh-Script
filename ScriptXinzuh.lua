@@ -1,6 +1,6 @@
 -- =============================================
 -- XinzuhScript | Blox Fruits - Delta Executor
--- Completo com Todas as Funções
+-- Completo com Todas as Funções Aparecendo
 -- =============================================
 
 local Players = game:GetService("Players")
@@ -126,10 +126,9 @@ Scroll.ScrollBarThickness = 6
 Scroll.CanvasSize = UDim2.new(0, 0, 0, 700)
 Scroll.Parent = MainFrame
 
--- ==================== FUNÇÕES ====================
+-- ==================== TODAS AS FUNÇÕES ====================
 CreateToggle(Scroll, "Auto Farm", "AutoFarm", function()
-    while getgenv().AutoFarm do
-        task.wait(0.1)
+    while getgenv().AutoFarm do task.wait(0.1)
         if workspace.Enemies then
             local closest, minDist = nil, math.huge
             for _, enemy in pairs(workspace.Enemies:GetChildren()) do
@@ -191,4 +190,4 @@ end)
 FloatBtn:GetPropertyChangedSignal("Position"):Connect(function() saveData("FloatPos", FloatBtn.Position) end)
 MainFrame:GetPropertyChangedSignal("Position"):Connect(function() saveData("PanelPos", MainFrame.Position) end)
 
-print("✅ XinzuhScript Completo carregado!")
+print("✅ XinzuhScript Completo carregado com todas as funções!")
